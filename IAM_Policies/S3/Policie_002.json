@@ -1,0 +1,31 @@
+{
+    "Version":"2012-10-17",
+    "Statement": [
+      {
+        "Sid": "AllowStatement1",
+        "Action": ["s3:ListAllMyBuckets", "s3:GetBucketLocation"],
+        "Effect": "Allow",
+        "Resource": ["arn:aws:s3:::*"]
+      },
+     {
+        "Sid": "AllowStatement2A",
+        "Action": ["s3:ListBucket"],
+        "Effect": "Allow",
+        "Resource": ["arn:aws:s3:::BUCKET"],
+        "Condition":{"StringEquals":{"s3:prefix":["","FOLDER"]}}
+       },
+     {
+        "Sid": "AllowStatement3",
+        "Action": ["s3:ListBucket"],
+        "Effect": "Allow",
+        "Resource": ["arn:aws:s3:::BUCKET"],
+        "Condition":{"StringLike":{"s3:prefix":["FOLDER/*"]}}
+       },    
+      {
+        "Sid": "AllowStatement4A",
+        "Effect": "Allow",
+        "Action": ["s3:GetObject"],
+        "Resource": ["arn:aws:s3:::BUCKET/FOLDER/*"]
+      }
+    ]
+   }

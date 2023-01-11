@@ -1,0 +1,13 @@
+## Sobre a policie 
+
+Objetivo: Construir uma politica para ser anexada a usuários do IAM com o objetivo de liberar controle parcial somente a um diretório em específico do bucket.
+
+
+Variaveis: Você deve alterar as variaveis padrão
+BUCKET = nome do seu bucket
+FOLDER = nome do diretorio
+
+Permissões no diretório:
+- Listar
+- Download
+
